@@ -1,6 +1,12 @@
 package com.egeuni.earthquake;
 
-import android.content.Context;
+
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 public class Formatter {
     private String date;
@@ -44,6 +50,53 @@ public class Formatter {
       String[] strings = string.split("of ");
 
       return strings[1];
+    }
+
+    public String extractCity(String result){
+        String str;
+        if(!result.contains("(")) {
+            str = "ROMA";
+        } else {
+            str = result.substring(result.indexOf("(")+1,result.indexOf(")"));
+        }
+
+        Log.d("FindMe", "extractCity: " + str);
+        return str;
+    }
+
+    public int getColorId(Double mag) {
+
+        if(mag <= 3.0) {
+            return R.drawable.low_risky_button;
+        } else if(mag <= 5.0) {
+            return R.drawable.risky_button;
+        } else {
+            return R.drawable.high_risky_button;
+        }
+    }
+
+    public boolean isNewEarthquake(String earthquakeString) {
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        Date now = new Date();
+        Calendar cal = Calendar.getInstance();
+        // remove next line if you're always using the current time.
+        cal.setTime(now);
+        cal.add(Calendar.HOUR,1);
+        cal.add(Calendar.MINUTE, -59);
+        Date fifteenMinutesBack = cal.getTime();
+        Date earthquakeDate;
+        try {
+            earthquakeDate = parser.parse(earthquakeString);
+            if(earthquakeDate.after(fifteenMinutesBack)) {
+                Log.d("FindMe", "Option: True oldu");
+                return true;
+            } else {
+                Log.d("FindMe", "Option: False oldu");
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

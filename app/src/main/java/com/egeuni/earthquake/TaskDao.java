@@ -26,4 +26,21 @@ public interface TaskDao {
 
     @Query("DELETE FROM task")
     void delete();
+
+    /**
+     *
+     * TaskUser configuration ...*/
+
+
+    @Query("SELECT * FROM user")
+    List<TaskUser> loadAllProfiles();
+
+    @Insert
+    void insertUser(TaskUser taskUser);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateUser(TaskUser taskUser);
+
+    @Query("DELETE FROM user")
+    void deleteAllUser();
 }

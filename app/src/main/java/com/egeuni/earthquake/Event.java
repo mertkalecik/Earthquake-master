@@ -14,11 +14,11 @@ public class Event implements Serializable {
     private  String depth;
     private  String latitude;
     private  String longitude;
+    private int hDepth;
+    private int hMag;
 
 
-
-
-    public Event(String place, String date, String hour, String mag, String depth, String latitude, String longitude) {
+    public Event(String place, String date, String hour, String mag, String depth, String latitude, String longitude, int hDepth, int hMag) {
         this.place =place;
         this.date = date;
         this.hour = hour;
@@ -26,6 +26,8 @@ public class Event implements Serializable {
         this.depth = depth;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.hDepth = hDepth;
+        this.hMag = hMag;
     }
 
     public String getPlace() {
@@ -82,4 +84,19 @@ public class Event implements Serializable {
         return longitude;
     }
 
+    public int gethDepth() {
+        return hDepth;
+    }
+
+    public void sethDepth(int hDepth) {
+        this.hDepth = hDepth;
+    }
+
+    public int gethMag() {
+        return hMag;
+    }
+
+    public void sethMag(int hMag) {
+        this.hMag = hMag;
+    }
 }

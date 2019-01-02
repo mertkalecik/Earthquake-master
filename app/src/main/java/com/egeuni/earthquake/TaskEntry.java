@@ -10,6 +10,8 @@ public class TaskEntry {
     /** Title of the earthquake event */
     @PrimaryKey(autoGenerate = true)
     private  int id;
+    private int hazardDepth;
+    private int hazardMag;
     private  String place;
     private  String date;
     private  String hour;
@@ -19,7 +21,7 @@ public class TaskEntry {
     private  String longitude;
 
     @Ignore
-    public TaskEntry(String place, String date, String hour, String mag, String depth, String latitude, String longitude) {
+    public TaskEntry(String place, String date, String hour, String mag, String depth, String latitude, String longitude, int hazardDepth, int hazardMag) {
         this.place =place;
         this.date = date;
         this.hour = hour;
@@ -27,10 +29,12 @@ public class TaskEntry {
         this.depth = depth;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.hazardDepth = hazardDepth;
+        this.hazardMag = hazardMag;
 
     }
 
-    public TaskEntry(int id, String place, String date, String hour, String mag, String depth, String latitude, String longitude) {
+    public TaskEntry(int id, String place, String date, String hour, String mag, String depth, String latitude, String longitude, int hazardDepth, int hazardMag) {
         this.id = id;
         this.place =place;
         this.date = date;
@@ -39,7 +43,8 @@ public class TaskEntry {
         this.depth = depth;
         this.latitude = latitude;
         this.longitude = longitude;
-
+        this.hazardDepth = hazardDepth;
+        this.hazardMag = hazardMag;
     }
 
 
@@ -101,5 +106,11 @@ public class TaskEntry {
         return longitude;
     }
 
+    public int getHazardDepth() {
+        return hazardDepth;
+    }
 
+    public int getHazardMag() {
+        return hazardMag;
+    }
 }

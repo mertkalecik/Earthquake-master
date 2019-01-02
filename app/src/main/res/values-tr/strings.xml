@@ -4,4 +4,5 @@
 
     <string name="menu_item_refresh">Yenile</string>
     <string name="menu_item_settings">Ayarlar</string>
+    <string name="title_place">Yer</string>
 </resources>

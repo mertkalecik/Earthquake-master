@@ -1,12 +1,19 @@
 package com.egeuni.earthquake;
 
 
+import android.arch.persistence.db.SupportSQLiteOpenHelper;
 import android.arch.persistence.room.Database;
+import android.arch.persistence.room.DatabaseConfiguration;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.InvalidationTracker;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import android.util.Log;
 
-@Database(entities = {TaskEntry.class}, version = 1, exportSchema = false)
+import javax.inject.Inject;
+
+@Database(entities = {TaskEntry.class, TaskUser.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
@@ -23,7 +30,6 @@ public abstract class AppDatabase extends RoomDatabase {
                         .build();
             }
         }
-
         return sInstance;
     }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Automatic update">
+        <SwitchPreference
+            android:title="Auto updater"
+            android:key="autoUpdate"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="The number of earthquakes that will be displayed">
+        <ListPreference
+            android:title="Click to choose your preference"
+            android:key="listPref"
+            android:defaultValue="500"
+            android:entries="@array/listPrefEntries"
+            android:entryValues="@array/listPrefValues"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Minimum magnitute that will be displayed">
+        <ListPreference
+            android:title="Click to choose your preference"
+            android:key="listPrefMag"
+            android:defaultValue="1.7"
+            android:entries="@array/listPrefMagEntries"
+            android:entryValues="@array/listPrefMagValues"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Minimum depth that will be displayed">
+        <ListPreference
+            android:title="Click to choose your preference"
+            android:key="listPrefDepth"
+            android:defaultValue="20.0"
+            android:entries="@array/listPrefDepthEntries"
+            android:entryValues="@array/listPrefDepthValues"/>
+    </PreferenceCategory>
+</PreferenceScreen>

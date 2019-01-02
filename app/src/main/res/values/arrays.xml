@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listPrefEntries">
+        <item>500</item>
+        <item>200</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="listPrefValues">
+        <item>500</item>
+        <item>200</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="listPrefMagEntries">
+        <item>5.0</item>
+        <item>3.0</item>
+        <item>1.7</item>
+    </string-array>
+
+    <string-array name="listPrefMagValues">
+        <item>5.0</item>
+        <item>3.0</item>
+        <item>1.7</item>
+    </string-array>
+
+    <string-array name="listPrefDepthEntries">
+        <item>5 km</item>
+        <item>10 km</item>
+        <item>20 km</item>
+    </string-array>
+
+    <string-array name="listPrefDepthValues">
+        <item>5.0</item>
+        <item>10.0</item>
+        <item>20.0</item>
+    </string-array>
+</resources>
